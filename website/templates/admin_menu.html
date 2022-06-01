@@ -1,0 +1,37 @@
+<html>
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<head>
+<style>
+.button{
+    border-radius: 8px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+  background-color: gray;
+  color: white;
+}
+</style>
+</head>
+
+<h1 align="center">Admin Menu</h1>
+<br/>
+
+<div id="rowOne" style="text-align:center">
+    <a href="/certRecords"><button class="button" id="certRecords">View All Certificates</button></a>
+    <a href="/chain"><button class="button" id="chain">View Chain</button></a>
+</div><br/>
+
+<div id="rowTwo" style="text-align:center">
+    <a href="/logout"><button class="button" href="/logout">Logout</button></a>
+</div>
+{% endblock %}
+</html>

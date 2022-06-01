@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block title %}View Chain{% endblock %} {% block content
+    %}
+    <head>
+    <style>
+    .card-link{
+    border-radius: 8px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+    
+    .card-link:hover {
+    background-color: gray;
+    color: white;
+    }
+    </style>
+    </head>
+    <h1 align="center">View Chain</h1>
+    <br/>
+    <div class="container">
+        <div class="row row-cols-3">
+            {% for i in range(1, 7) %}
+            <div class="col-sm-4 mb-3">
+                <div class="card" style="width: 18rem;">
+                        <img src="static/QRCode{{i-1}}.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Block {{i}}:</b></h5>
+                        <p class="card-text"></p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{ block.getTransactions(i) }} </li>
+                    </ul>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
+    </html>
